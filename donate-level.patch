@@ -1,0 +1,13 @@
+diff --git a/src/Options.cpp b/src/Options.cpp
+index 6ce8970..1a16ae0 100644
+--- a/src/Options.cpp
++++ b/src/Options.cpp
+@@ -562,7 +562,7 @@ bool Options::parseArg(int key, uint64_t arg)
+         break;
+
+     case 1003: /* --donate-level */
+-        if (arg < 1 || arg > 99) {
++        if (arg < 0 || arg > 99) {
+             return true;
+         }
+
