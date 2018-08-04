@@ -2,8 +2,6 @@
 
 A docker container for [xmrig](https://github.com/xmrig/xmrig), including donate level patch.
 
-[![Build Status](https://travis-ci.com/bananajamma/docker-xmrig.svg?branch=master)](https://travis-ci.com/bananajamma/docker-xmrig)
-
 ## Requirements
 
  * [docker](https://docs.docker.com/install/)
