@@ -5,7 +5,7 @@ WORKDIR /tmp
 COPY donate-level.patch /tmp
 
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install ca-certificates curl git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev libhwloc-dev
+    && apt-get -y --no-install-recommends install ca-certificates curl git openssl build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev libhwloc-dev
 
 RUN git clone https://github.com/xmrig/xmrig.git \
     && git -C xmrig apply ../donate-level.patch \
