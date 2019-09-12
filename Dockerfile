@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:latest
 
 WORKDIR /tmp
 
@@ -29,4 +29,3 @@ USER xmrig
 
 ENTRYPOINT ["xmrig"]
 CMD ["--help"]
-
