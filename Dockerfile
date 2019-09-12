@@ -1,11 +1,11 @@
-FROM ubuntu:16.04
+FROM ubuntu:rolling
 
 WORKDIR /tmp
 
 COPY donate-level.patch /tmp
 
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install ca-certificates curl build-essential cmake libuv1-dev git openssl libssl-dev
+    && apt-get -y --no-install-recommends install ca-certificates curl git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev libhwloc-dev
 
 RUN git clone https://github.com/xmrig/xmrig.git \
     && git -C xmrig apply ../donate-level.patch \
@@ -17,7 +17,7 @@ RUN git clone https://github.com/xmrig/xmrig.git \
     && cd ../.. \
     && mv xmrig/build/xmrig /usr/local/bin/xmrig \
     && chmod a+x /usr/local/bin/xmrig \
-    && apt-get -y remove ca-certificates curl build-essential cmake \
+    && apt-get -y purge --autoremove ca-certificates curl git build-essential cmake \
     && apt-get clean autoclean \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
